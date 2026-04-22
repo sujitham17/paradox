@@ -2,94 +2,73 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
+/* Paradox Agency — Design System
+   Light, bold, creative. Multi-accent palette: ink, paper, blue, red, orange, green, yellow.
+   All colors HSL.
 */
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    --background: 40 30% 98%;          /* paper */
+    --foreground: 0 0% 7%;             /* ink */
 
     --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card-foreground: 0 0% 7%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover-foreground: 0 0% 7%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    --primary: 0 0% 7%;                /* ink as primary */
+    --primary-foreground: 40 30% 98%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    --secondary: 40 20% 94%;
+    --secondary-foreground: 0 0% 7%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    --muted: 40 15% 93%;
+    --muted-foreground: 0 0% 35%;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    --accent: 40 20% 94%;
+    --accent-foreground: 0 0% 7%;
 
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive: 4 84% 56%;
+    --destructive-foreground: 0 0% 100%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    --border: 30 10% 86%;
+    --input: 30 10% 86%;
+    --ring: 0 0% 7%;
 
-    --radius: 0.5rem;
+    --radius: 1rem;
+
+    /* Brand accents */
+    --brand-blue: 224 92% 58%;
+    --brand-red: 4 84% 56%;
+    --brand-orange: 18 95% 58%;
+    --brand-green: 142 55% 42%;
+    --brand-yellow: 48 100% 58%;
+    --brand-grey: 0 0% 55%;
+    --brand-ink: 0 0% 7%;
+    --brand-paper: 40 30% 98%;
+
+    --gradient-rainbow: linear-gradient(
+      90deg,
+      hsl(var(--brand-blue)),
+      hsl(var(--brand-green)),
+      hsl(var(--brand-yellow)),
+      hsl(var(--brand-orange)),
+      hsl(var(--brand-red))
+    );
+    --gradient-fade: linear-gradient(180deg, hsl(var(--background)) 0%, hsl(40 30% 95%) 100%);
+
+    --shadow-card: 0 1px 0 hsl(0 0% 0% / 0.04), 0 20px 40px -20px hsl(0 0% 0% / 0.12);
+    --shadow-pop: 8px 8px 0 hsl(var(--brand-ink));
 
     --sidebar-background: 0 0% 98%;
-
     --sidebar-foreground: 240 5.3% 26.1%;
-
     --sidebar-primary: 240 5.9% 10%;
-
     --sidebar-primary-foreground: 0 0% 98%;
-
     --sidebar-accent: 240 4.8% 95.9%;
-
     --sidebar-accent-foreground: 240 5.9% 10%;
-
     --sidebar-border: 220 13% 91%;
-
-    --sidebar-ring: 217.2 91.2% 59.8%;
-  }
-
-  .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
-
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
-
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
-
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
-
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
-
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
-
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
-
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
-
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
-    --sidebar-background: 240 5.9% 10%;
-    --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 224.3 76.3% 48%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 3.7% 15.9%;
-    --sidebar-accent-foreground: 240 4.8% 95.9%;
-    --sidebar-border: 240 3.7% 15.9%;
     --sidebar-ring: 217.2 91.2% 59.8%;
   }
 }
@@ -98,8 +77,75 @@ All colors MUST be HSL.
   * {
     @apply border-border;
   }
-
-  body {
-    @apply bg-background text-foreground;
+  html {
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
   }
+  body {
+    @apply bg-background text-foreground font-sans;
+    font-feature-settings: "ss01", "cv11";
+  }
+  ::selection {
+    background: hsl(var(--brand-yellow));
+    color: hsl(var(--brand-ink));
+  }
+  h1, h2, h3, h4 {
+    @apply font-display tracking-tight;
+    font-feature-settings: "ss01";
+  }
+}
+
+@layer components {
+  .display-xl {
+    @apply font-display font-extrabold tracking-tighter leading-[0.92];
+    font-size: clamp(3rem, 9vw, 8.5rem);
+    letter-spacing: -0.04em;
+  }
+  .display-lg {
+    @apply font-display font-bold tracking-tighter leading-[0.95];
+    font-size: clamp(2.5rem, 6vw, 5rem);
+    letter-spacing: -0.035em;
+  }
+  .display-md {
+    @apply font-display font-bold tracking-tight leading-[1];
+    font-size: clamp(1.75rem, 3.5vw, 3rem);
+    letter-spacing: -0.025em;
+  }
+  .eyebrow {
+    @apply font-mono text-xs uppercase tracking-[0.2em] text-muted-foreground;
+  }
+  .pill {
+    @apply inline-flex items-center gap-2 rounded-full border border-foreground/15 bg-background px-3 py-1 font-mono text-[11px] uppercase tracking-[0.18em];
+  }
+  .link-underline {
+    @apply relative inline-block after:absolute after:left-0 after:bottom-0 after:h-[2px] after:w-full after:origin-left after:scale-x-0 after:bg-current after:transition-transform after:duration-300 hover:after:scale-x-100;
+  }
+  .pop-card {
+    @apply rounded-2xl border-2 border-foreground bg-card transition-all duration-200;
+    box-shadow: 6px 6px 0 hsl(var(--brand-ink));
+  }
+  .pop-card:hover {
+    transform: translate(-2px, -2px);
+    box-shadow: 10px 10px 0 hsl(var(--brand-ink));
+  }
+  .marquee {
+    display: flex;
+    gap: 3rem;
+    animation: marquee 40s linear infinite;
+    width: max-content;
+  }
+  .noise::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    opacity: 0.04;
+    mix-blend-mode: multiply;
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/></filter><rect width='100%' height='100%' filter='url(%23n)' opacity='0.7'/></svg>");
+  }
+}
+
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
 }
