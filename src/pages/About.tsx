@@ -44,17 +44,20 @@ const About = () => {
           <h2 className="display-lg mt-4 max-w-xl">A short, true story.</h2>
           <div className="mt-8 space-y-5 text-lg text-muted-foreground max-w-2xl">
             <p>
-              We built Paradox after watching brilliant founders pour money into campaigns that delivered
-              applause but no revenue. Beautiful reels. Climbing follower counts. Empty calendars.
+              We didn't start as an agency. We started as freelancers — working independently with brands 
+              and founders across the globe. Different people, different time zones, different clients.
             </p>
             <p>
-              So we rebuilt the playbook from the bottom of the funnel up — starting with offer, conversion
-              and creative, then layering paid and organic on top. The result: smaller budgets, bigger
-              outcomes, every time.
+              Over time, our paths crossed. And we realized something — we all shared the same mindset: 
+              results matter more than noise. That's when it clicked.
+            </p>
+            <p>
+              Instead of working in silos, we came together. Not to build just another agency, but to 
+              build a team that truly understands what moves the needle. That's how Paradox was born.
             </p>
             <p className="text-foreground font-medium">
-              Today, we run growth for a hand-picked roster of founders who measure success the same way
-              we do — in money in the bank.
+              Today, we operate as a unified team with one goal: to help brands grow globally — 
+              not just in reach, but in real revenue.
             </p>
           </div>
         </div>

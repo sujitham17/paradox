@@ -1,6 +1,7 @@
 import { Link, NavLink as RRNavLink, useLocation } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { Menu, X } from "lucide-react";
+import Logo from "./Logo";
 
 const links = [
   { to: "/", label: "Home" },
@@ -36,15 +37,8 @@ export default function SiteNav() {
       }`}
     >
       <div className="container flex items-center justify-between h-16 md:h-20">
-        <Link to="/" className="flex items-center gap-2 group" aria-label="Paradox Agency home">
-          <span className="relative inline-flex items-center justify-center h-8 w-8 rounded-full bg-foreground text-background font-display font-bold">
-            P
-            <span className="absolute -right-0.5 -top-0.5 h-2 w-2 rounded-full bg-brand-red" />
-          </span>
-          <span className="font-display font-bold tracking-tight text-lg">Paradox</span>
-          <span className="font-mono text-[10px] uppercase tracking-[0.2em] text-muted-foreground hidden sm:inline">
-            / agency
-          </span>
+        <Link to="/" aria-label="Paradox Agency home">
+          <Logo />
         </Link>
 
         <nav className="hidden lg:flex items-center gap-7">
@@ -64,13 +58,13 @@ export default function SiteNav() {
         </nav>
 
         <div className="flex items-center gap-2">
-          <Link
-            to="/contact"
+          <a
+            href="mailto:paradoxagencyoffl@gmail.com"
             className="hidden md:inline-flex items-center gap-2 rounded-full bg-foreground text-background px-4 py-2 text-sm font-medium hover:bg-foreground/90 transition"
           >
-            Book a call
+            Mail us now
             <span className="h-1.5 w-1.5 rounded-full bg-brand-green animate-blink" />
-          </Link>
+          </a>
           <button
             type="button"
             aria-label="Toggle menu"

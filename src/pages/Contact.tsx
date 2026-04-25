@@ -1,6 +1,6 @@
 import { useState } from "react";
 import PageHero from "@/components/site/PageHero";
-import { Mail, Instagram, Send, ArrowUpRight } from "lucide-react";
+import { Mail, Instagram, Send } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 
 const Contact = () => {
@@ -118,23 +118,10 @@ const Contact = () => {
 
           {/* Side */}
           <aside className="lg:col-span-5 space-y-4">
-            <a
-              href="https://wa.me/0000000000"
-              target="_blank"
-              rel="noreferrer"
-              className="block rounded-2xl border-2 border-foreground bg-brand-green text-background p-7 hover:-translate-y-1 transition"
-              style={{ boxShadow: "6px 6px 0 hsl(var(--brand-ink))" }}
-            >
-              <div className="flex items-center justify-between">
-                <p className="font-mono text-xs uppercase tracking-[0.18em]">WhatsApp</p>
-                <ArrowUpRight className="h-5 w-5" />
-              </div>
-              <p className="display-md mt-3 text-background">Chat with us now</p>
-              <p className="mt-2 text-background/85 text-sm">Fastest way to a discovery call.</p>
-            </a>
+
 
             <a
-              href="https://instagram.com"
+              href="https://www.instagram.com/paradox.agency"
               target="_blank"
               rel="noreferrer"
               className="block rounded-2xl border border-border bg-card p-7 hover:border-foreground transition"
@@ -150,7 +137,7 @@ const Contact = () => {
             </a>
 
             <a
-              href="mailto:hello@paradox.agency"
+              href="mailto:paradoxagencyoffl@gmail.com"
               className="block rounded-2xl border border-border bg-card p-7 hover:border-foreground transition"
             >
               <div className="flex items-center justify-between">
@@ -159,16 +146,11 @@ const Contact = () => {
                 </p>
                 <Mail className="h-5 w-5" />
               </div>
-              <p className="display-md mt-3">hello@paradox.agency</p>
+              <p className="display-md mt-3">paradoxagencyoffl@gmail.com</p>
               <p className="mt-2 text-muted-foreground text-sm">Replies in &lt; 24h.</p>
             </a>
 
-            <div className="rounded-2xl bg-foreground text-background p-7">
-              <p className="font-mono text-xs uppercase tracking-[0.18em] text-background/60">
-                Working hours
-              </p>
-              <p className="mt-3 font-display text-xl">Mon – Sat · 9:00 – 19:00 IST</p>
-            </div>
+
           </aside>
         </div>
       </section>

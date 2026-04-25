@@ -22,12 +22,12 @@ export default function PageHero({ eyebrow, title, subtitle, align = "left" }: P
           )}
           {align === "left" && (
             <div className="mt-10 flex flex-wrap items-center gap-3 animate-fade-up [animation-delay:200ms]">
-              <Link
-                to="/contact"
+              <a
+                href="mailto:paradoxagencyoffl@gmail.com"
                 className="inline-flex items-center gap-2 rounded-full bg-foreground text-background px-6 py-3 font-medium hover:bg-foreground/90 transition"
               >
-                Book a call <ArrowUpRight className="h-4 w-4" />
-              </Link>
+                Mail us now <ArrowUpRight className="h-4 w-4" />
+              </a>
               <Link
                 to="/work"
                 className="inline-flex items-center gap-2 rounded-full border border-foreground/20 px-6 py-3 font-medium hover:bg-secondary transition"

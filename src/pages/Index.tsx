@@ -3,10 +3,10 @@ import { ArrowUpRight, TrendingUp, Target, Sparkles, Zap } from "lucide-react";
 import Marquee from "@/components/site/Marquee";
 
 const stats = [
-  { kpi: "3.8×", label: "Avg. lead lift" },
-  { kpi: "4.2×", label: "ROAS on Meta ads" },
-  { kpi: "27", label: "Brands scaled" },
-  { kpi: "5d", label: "Avg. time to first sale" },
+  { kpi: "3×", label: "Scaling", desc: "Average revenue growth for our client portfolio in the first 90 days." },
+  { kpi: "2×", label: "ROAS", desc: "Minimum return on ad spend across all active performance campaigns." },
+  { kpi: "10+", label: "Brands worked", desc: "Founders and businesses who trusted us to build their pipeline." },
+  { kpi: "30 days", label: "Avg scale", desc: "Average time it takes to see measurable pipeline and revenue impact." },
 ];
 
 const services = [
@@ -38,29 +38,31 @@ const cases = [
     accent: "from-brand-blue/20 to-brand-blue/0",
   },
   {
-    tag: "Real Estate",
-    title: "₹1.2Cr pipeline from cold ads",
-    metric: "4.6× ROAS",
+    tag: "Creator",
+    title: "Freelance editor lands 2 premium Indian + 1 international client",
+    metric: "3 high-budget clients",
     accent: "from-brand-orange/30 to-brand-orange/0",
   },
   {
-    tag: "Coaching",
-    title: "Booked-out cohort in 11 days",
-    metric: "+3.1× call bookings",
+    tag: "Education",
+    title: "30-day lead target — cracked in 5 days",
+    metric: "3× more leads",
     accent: "from-brand-green/20 to-brand-green/0",
   },
 ];
 
 const testimonials = [
   {
-    q: "They cared about my revenue, not my follower count. First profitable month in two years.",
-    name: "Aanya R.",
-    role: "Founder, Skillforge",
+    q: "I've been a freelance video editor stuck with local clients. Paradox build my personal brand from scratch, be it positioning content and everything. In a month,I got an international lead and few high budget indian leads. Will continue to work wth the team and not stopping anytime soon. Thanks, Team Paradox!",
+    name: "Surya Velmayil",
+    role: "Editor, Screenplay Writer",
+    img: "/surya.jpg",
   },
   {
-    q: "Finally, an agency that talks money, not impressions. ROAS jumped from 1.8 to 4.4.",
-    name: "Karan S.",
-    role: "CEO, NestRealty",
+    q: "I have been working with Paradox team, for content writing and voice overs. They deeply focus on the quality and final output, flexible to multiple iterations even at 2 a.m. I am part of them and wish to be a part of them for continuous growth.",
+    name: "Muvidha Styles",
+    role: "India",
+    img: "/muvidha.png",
   },
 ];
 
@@ -97,15 +99,15 @@ const Home = () => {
             </p>
 
             <div className="flex flex-wrap items-center gap-3 animate-fade-up [animation-delay:200ms]">
-              <Link
-                to="/contact"
+              <a
+                href="mailto:paradoxagencyoffl@gmail.com"
                 className="inline-flex items-center gap-2 rounded-full bg-foreground text-background px-6 py-3.5 font-medium hover:bg-foreground/90 transition"
               >
-                Book a discovery call
+                Mail us now
                 <ArrowUpRight className="h-4 w-4" />
-              </Link>
+              </a>
               <a
-                href="https://instagram.com"
+                href="https://www.instagram.com/paradox.agency"
                 target="_blank"
                 rel="noreferrer"
                 className="inline-flex items-center gap-2 rounded-full border border-foreground/20 px-6 py-3.5 font-medium hover:bg-secondary transition"
@@ -129,6 +131,13 @@ const Home = () => {
             <div className="-rotate-2 pop-card px-6 py-4 bg-brand-yellow">
               <p className="font-mono text-[10px] uppercase tracking-[0.2em]">ROAS</p>
               <p className="display-md mt-1">4.6×</p>
+            </div>
+          </div>
+          <div className="hidden md:block absolute right-6 bottom-32 animate-fade-up [animation-delay:500ms]">
+            <div className="rotate-1 pop-card px-6 py-4 bg-foreground text-background">
+              <p className="font-mono text-[10px] uppercase tracking-[0.2em] text-background/60">Meta Ads · Day 3</p>
+              <p className="display-md mt-1 text-brand-green">3× leads</p>
+              <p className="text-xs text-background/70">30-day target — crushed in 3 days</p>
             </div>
           </div>
 
@@ -157,13 +166,16 @@ const Home = () => {
           {stats.map((s, i) => (
             <div
               key={s.label}
-              className={`py-10 ${i !== 0 ? "lg:border-l border-foreground/15" : ""} ${
+              className={`py-10 px-4 lg:px-8 ${i !== 0 ? "lg:border-l border-foreground/15" : ""} ${
                 i % 2 ? "border-l border-foreground/15 lg:border-l" : ""
               }`}
             >
               <p className="display-lg">{s.kpi}</p>
-              <p className="mt-2 text-sm text-muted-foreground font-mono uppercase tracking-[0.15em]">
+              <p className="mt-2 text-sm text-foreground font-mono uppercase tracking-[0.15em]">
                 {s.label}
+              </p>
+              <p className="mt-4 text-sm text-muted-foreground leading-relaxed">
+                {s.desc}
               </p>
             </div>
           ))}
@@ -241,9 +253,9 @@ const Home = () => {
         <div className="container py-24 md:py-32">
           <div className="grid md:grid-cols-12 gap-12">
             <div className="md:col-span-4">
-              <p className="eyebrow text-background/60">/ Word of mouth</p>
+              <p className="eyebrow text-background/60">/ What do they say?</p>
               <h2 className="display-lg mt-4 text-background">
-                What founders <span className="text-brand-yellow italic font-medium">say.</span>
+                Client <span className="text-brand-yellow italic font-medium">Testimonials.</span>
               </h2>
               <Link
                 to="/testimonials"
@@ -262,8 +274,13 @@ const Home = () => {
                   <blockquote className="mt-5 font-display text-xl md:text-2xl leading-snug text-background">
                     "{t.q}"
                   </blockquote>
-                  <figcaption className="mt-6 text-sm text-background/70">
-                    <span className="text-background font-medium">{t.name}</span> — {t.role}
+                  <figcaption className="mt-6 text-sm text-background/70 flex items-center gap-3">
+                    {t.img && (
+                      <img src={t.img} alt={t.name} className="h-8 w-8 rounded-full object-cover border border-background/20" />
+                    )}
+                    <div>
+                      <span className="text-background font-medium">{t.name}</span> — {t.role}
+                    </div>
                   </figcaption>
                 </figure>
               ))}

@@ -111,12 +111,12 @@ const Services = () => {
                 <p className="font-display text-xl">
                   Want a custom quote for {s.title.split("—")[0].trim()}?
                 </p>
-                <Link
-                  to="/contact"
+                <a
+                  href="mailto:paradoxagencyoffl@gmail.com"
                   className="inline-flex items-center gap-2 rounded-full bg-background text-foreground px-5 py-2.5 text-sm font-medium hover:bg-brand-yellow transition"
                 >
-                  Book a call <ArrowUpRight className="h-4 w-4" />
-                </Link>
+                  Mail us now <ArrowUpRight className="h-4 w-4" />
+                </a>
               </div>
             </div>
             {i < services.length - 1 && <div className="lg:col-span-12 border-b border-border" />}

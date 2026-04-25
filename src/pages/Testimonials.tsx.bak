@@ -10,11 +10,10 @@ const reviews = [
     img: "/surya.jpg",
   },
   {
-    q: "We approached Paradox to run our Meta Ads campaign. What surprised us wasn’t just the results, it was the speed. Within just 5 days, they hit our 30-day target. By day 30, they had delivered 4x the results we initially aimed for. We also received great feedback from our partner companies about their creative ideas. From strategy to execution, everything was perfectly aligned. If you’re looking for a team that fulfills promises faster than expected, Paradox is the right choice.",
-    name: "EduPath Consulting Services",
-    role: "Education Consultancy",
+    q: "We sold out our cohort in 11 days. The waitlist alone covered four months of fees.",
+    name: "Nidhi P.",
+    role: "Coach, ReframeIQ",
     accent: "bg-brand-orange text-background",
-    img: "/edupath.png",
   },
   {
     q: "I have been working with Paradox team, for content writing and voice overs. They deeply focus on the quality and final output, flexible to multiple iterations even at 2 a.m. I am part of them and wish to be a part of them for continuous growth.",
@@ -115,10 +114,11 @@ const Testimonials = () => {
                   {c.msgs.map((m, idx) => (
                     <div
                       key={idx}
-                      className={`max-w-[80%] rounded-2xl px-4 py-2.5 text-sm ${m.from === "us"
+                      className={`max-w-[80%] rounded-2xl px-4 py-2.5 text-sm ${
+                        m.from === "us"
                           ? "bg-foreground text-background ml-auto rounded-br-sm"
                           : "bg-secondary text-foreground rounded-bl-sm"
-                        }`}
+                      }`}
                     >
                       {m.text}
                     </div>

@@ -143,12 +143,12 @@ const CaseStudies = () => {
           <h2 className="display-lg max-w-xl text-background">
             Want results like these on your account?
           </h2>
-          <Link
-            to="/contact"
+          <a
+            href="mailto:paradoxagencyoffl@gmail.com"
             className="inline-flex items-center gap-2 rounded-full bg-brand-yellow text-foreground px-6 py-3.5 font-medium hover:bg-background transition"
           >
-            Book a discovery call <ArrowUpRight className="h-4 w-4" />
-          </Link>
+            Mail us now <ArrowUpRight className="h-4 w-4" />
+          </a>
         </div>
       </section>
     </>
