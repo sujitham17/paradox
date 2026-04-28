@@ -1,75 +1,61 @@
 import PageHero from "@/components/site/PageHero";
-import { ArrowUpRight, Target, TrendingUp, Zap } from "lucide-react";
-import { Link } from "react-router-dom";
+import { ArrowUpRight } from "lucide-react";
 
-const studies = [
+const works = [
   {
-    client: "Edtech — upskilling platform",
-    problem: "₹1.2L/mo ad spend, leaking pipeline, 0.9× ROAS.",
-    strategy: [
-      "Rebuilt funnel from offer → landing → ads",
-      "Killed 32 underperforming creatives",
-      "Launched UGC-style reels as primary creative",
-    ],
-    results: [
-      { k: "412%", v: "Qualified leads" },
-      { k: "5 days", v: "30-day target hit" },
-      { k: "₹68", v: "Cost per lead (was ₹312)" },
-    ],
-    accent: "from-brand-blue/30 to-brand-blue/0",
-    chip: "bg-brand-blue text-background",
-    icon: TrendingUp,
+    client: "MyHanoi Trip",
+    category: "Travel Agency",
+    desc: "(International Client)",
+    services: ["Content Strategy & Marketing", "Voice Overs"],
+    accent: "from-brand-blue/10 to-brand-blue/0",
   },
   {
-    client: "Real Estate — luxury developer",
-    problem: "High follower count, zero qualified site visits.",
-    strategy: [
-      "Repositioned creative around lifestyle, not specs",
-      "Built lead-qualification quiz funnel",
-      "Retargeting cohorts by location & intent",
-    ],
-    results: [
-      { k: "₹1.2 Cr", v: "Pipeline in 60 days" },
-      { k: "4.6×", v: "ROAS" },
-      { k: "37", v: "Qualified site visits" },
-    ],
-    accent: "from-brand-orange/40 to-brand-orange/0",
-    chip: "bg-brand-orange text-background",
-    icon: Target,
+    client: "Muvidha Styles",
+    category: "Clothing Brand",
+    services: ["Content Strategy & Marketing", "Voice Overs"],
+    accent: "from-brand-orange/10 to-brand-orange/0",
   },
   {
-    client: "Coaching — career transition",
-    problem: "Cohort launches missed targets two quarters in a row.",
-    strategy: [
-      "Pre-launch waitlist via reels & DMs",
-      "Webinar funnel with retargeting layer",
-      "Daily creative testing for 14 days",
-    ],
-    results: [
-      { k: "Sold out", v: "In 11 days" },
-      { k: "3.1×", v: "Call bookings" },
-      { k: "₹420", v: "Cost per booked call" },
-    ],
-    accent: "from-brand-green/30 to-brand-green/0",
-    chip: "bg-brand-green text-background",
-    icon: Zap,
+    client: "Nithie Nr",
+    category: "Creator / Influencer",
+    services: ["Dubbing Service"],
+    accent: "from-brand-green/10 to-brand-green/0",
   },
   {
-    client: "D2C Service — home interiors",
-    problem: "Inconsistent leads, sales team idle 40% of week.",
-    strategy: [
-      "Geo-targeted Meta campaigns",
-      "Reels showcasing real project transitions",
-      "WhatsApp-first lead capture",
-    ],
-    results: [
-      { k: "3.8×", v: "Lead volume" },
-      { k: "62%", v: "Lower CAC" },
-      { k: "11", v: "New projects in 30 days" },
-    ],
-    accent: "from-brand-yellow/40 to-brand-yellow/0",
-    chip: "bg-brand-yellow text-foreground",
-    icon: TrendingUp,
+    client: "P2B",
+    category: "Business Consultancy",
+    services: ["Content Strategy", "Marketing", "On-cam Creation"],
+    accent: "from-brand-yellow/10 to-brand-yellow/0",
+  },
+  {
+    client: "GrowAI",
+    category: "Edtech",
+    services: ["Content Strategy", "Marketing", "On-cam Creation"],
+    accent: "from-brand-blue/10 to-brand-blue/0",
+  },
+  {
+    client: "inopro",
+    category: "SaaS",
+    services: ["Social Media Mgt", "Digital Marketing", "Brand Strategy"],
+    accent: "from-brand-orange/10 to-brand-orange/0",
+  },
+  {
+    client: "edupath",
+    category: "Educational Consultancy",
+    services: ["Meta Ads Campaign", "Social Media Mgt", "Video & Design"],
+    accent: "from-brand-green/10 to-brand-green/0",
+  },
+  {
+    client: "surya",
+    category: "Personal Branding",
+    services: ["Content Strategy & Marketing", "Branding Strategy", "Design Production"],
+    accent: "from-brand-yellow/10 to-brand-yellow/0",
+  },
+  {
+    client: "lr holidays",
+    category: "Travel Agency",
+    services: ["Content Strategy & Marketing", "Voice Overs"],
+    accent: "from-brand-blue/10 to-brand-blue/0",
   },
 ];
 
@@ -77,71 +63,54 @@ const CaseStudies = () => {
   return (
     <>
       <PageHero
-        eyebrow="Case Studies"
+        eyebrow="Our Work"
         title={
           <>
-            Receipts.{" "}
-            <span className="italic font-medium text-brand-grey">Not case study fluff.</span>
+            Real work.{" "}
+            <span className="italic font-medium text-brand-grey">Real brands.</span>
           </>
         }
-        subtitle="Every engagement, the same goal — measurable revenue impact in 30 days. Here's how a few of them played out."
+        subtitle="A snapshot of the brands we've partnered with to drive revenue, scale reach, and build authority."
       />
 
-      <section className="container py-20 md:py-28 space-y-12">
-        {studies.map((s, i) => (
-          <article
-            key={i}
-            className={`relative rounded-3xl border border-border bg-gradient-to-br ${s.accent} overflow-hidden`}
-          >
-            <div className="grid lg:grid-cols-12 gap-10 p-8 md:p-12">
-              <div className="lg:col-span-5">
-                <div className="flex items-center gap-3">
-                  <span className={`inline-flex items-center justify-center h-10 w-10 rounded-full ${s.chip}`}>
-                    <s.icon className="h-4 w-4" />
-                  </span>
-                  <span className="pill bg-background">{s.client.split("—")[0].trim()}</span>
+      <section className="container py-20 md:py-28">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {works.map((w, i) => (
+            <article
+              key={i}
+              className={`relative rounded-3xl border border-border bg-gradient-to-br ${w.accent} overflow-hidden hover:border-foreground transition duration-500 group`}
+            >
+              <div className="p-8 flex flex-col h-full justify-between min-h-[320px]">
+                <div>
+                  <div className="flex items-start justify-between mb-6">
+                    <span className="pill bg-background/50 border-border">{w.category}</span>
+                    <ArrowUpRight className="h-5 w-5 text-muted-foreground group-hover:text-foreground group-hover:rotate-45 transition-transform duration-300" />
+                  </div>
+                  <h2 className="display-md mt-4 text-foreground capitalize">
+                    {w.client}
+                    {w.desc && <span className="block mt-1 font-sans text-sm font-normal text-muted-foreground normal-case">{w.desc}</span>}
+                  </h2>
                 </div>
-                <h2 className="display-md mt-6">{s.client}</h2>
-                <div className="mt-8 space-y-6 text-sm">
-                  <div>
-                    <p className="eyebrow">Problem</p>
-                    <p className="mt-2 text-base">{s.problem}</p>
+                <div className="mt-10 pt-6 border-t border-border/50">
+                  <p className="font-mono text-[10px] uppercase tracking-[0.2em] text-muted-foreground mb-4">Services rendered</p>
+                  <div className="flex flex-wrap gap-2">
+                    {w.services.map(srv => (
+                      <span key={srv} className="inline-flex items-center rounded-md border border-border bg-card px-2.5 py-1 text-xs font-medium text-foreground/80">
+                        {srv}
+                      </span>
+                    ))}
                   </div>
-                  <div>
-                    <p className="eyebrow">Strategy</p>
-                    <ul className="mt-2 space-y-1.5">
-                      {s.strategy.map((st) => (
-                        <li key={st} className="text-base">→ {st}</li>
-                      ))}
-                    </ul>
-                  </div>
-                </div>
-              </div>
-              <div className="lg:col-span-7 grid sm:grid-cols-3 gap-4 self-start">
-                {s.results.map((r) => (
-                  <div key={r.v} className="rounded-2xl bg-background border border-border p-6">
-                    <p className="display-md">{r.k}</p>
-                    <p className="mt-2 font-mono text-[11px] uppercase tracking-[0.18em] text-muted-foreground">
-                      {r.v}
-                    </p>
-                  </div>
-                ))}
-                <div className="sm:col-span-3 rounded-2xl bg-foreground text-background p-6 flex items-center justify-between">
-                  <p className="font-display text-lg">Visual proof — ads, screenshots, creatives.</p>
-                  <span className="pill border-background/30 text-background bg-background/10">
-                    Available on call
-                  </span>
                 </div>
               </div>
-            </div>
-          </article>
-        ))}
+            </article>
+          ))}
+        </div>
       </section>
 
       <section className="container pb-24">
         <div className="rounded-3xl bg-foreground text-background p-10 md:p-16 flex flex-col md:flex-row md:items-end md:justify-between gap-6">
           <h2 className="display-lg max-w-xl text-background">
-            Want results like these on your account?
+            Ready to add your brand to this list?
           </h2>
           <a
             href="mailto:paradoxagencyoffl@gmail.com"

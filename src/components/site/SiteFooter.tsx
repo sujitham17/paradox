@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { ArrowUpRight, Instagram, Mail } from "lucide-react";
+import { ArrowUpRight, Instagram, Linkedin, Mail } from "lucide-react";
 import Logo from "./Logo";
 
 export default function SiteFooter() {
@@ -55,7 +55,16 @@ export default function SiteFooter() {
                     <Instagram className="h-4 w-4" /> Instagram
                   </a>
                 </li>
-
+                <li>
+                  <a
+                    href="https://www.linkedin.com/company/paradoxagencyoffl/"
+                    target="_blank"
+                    rel="noreferrer"
+                    className="inline-flex items-center gap-2 text-background/80 hover:text-background"
+                  >
+                    <Linkedin className="h-4 w-4" /> LinkedIn
+                  </a>
+                </li>
                 <li>
                   <a
                     href="mailto:paradoxagencyoffl@gmail.com"

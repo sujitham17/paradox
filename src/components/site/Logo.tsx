@@ -9,11 +9,14 @@ interface LogoProps {
 export default function Logo({ className, withText = true, light = false }: LogoProps) {
   return (
     <div className={cn("flex items-center gap-2 group", className)}>
-      <div className="relative h-9 w-9 md:h-10 md:w-10 flex items-center justify-center transition-transform duration-300 group-hover:scale-105">
+      <div className="relative h-12 w-12 md:h-16 md:w-16 flex items-center justify-center transition-transform duration-300 group-hover:scale-105">
         <img 
           src="/logo.png" 
           alt="Paradox Logo" 
-          className="h-full w-full object-contain scale-[1.35] mix-blend-multiply brightness-110 contrast-125"
+          className={cn(
+            "h-full w-full object-contain scale-[1.35]",
+            light ? "brightness-150 drop-shadow-md" : "mix-blend-multiply brightness-110 contrast-125"
+          )}
         />
       </div>
       {withText && (

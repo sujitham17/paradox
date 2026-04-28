@@ -27,16 +27,8 @@ const About = () => {
       {/* FOUNDER */}
       <section className="container py-24 md:py-32 grid lg:grid-cols-12 gap-12">
         <div className="lg:col-span-5">
-          <div className="aspect-[4/5] rounded-2xl bg-gradient-to-br from-brand-orange/40 via-brand-yellow/30 to-brand-blue/20 border border-border relative overflow-hidden noise">
-            <div className="absolute inset-0 flex items-end p-8">
-              <div>
-                <p className="font-mono text-xs uppercase tracking-[0.2em] text-foreground/70">Founder</p>
-                <p className="display-md mt-2">The Paradox Team</p>
-              </div>
-            </div>
-            <div className="absolute top-6 right-6 pop-card px-4 py-2 bg-background -rotate-3">
-              <p className="font-mono text-[10px] uppercase tracking-[0.18em]">Since 2022</p>
-            </div>
+          <div className="aspect-[4/5] rounded-2xl border border-border relative overflow-hidden">
+            <img src="/team.jpg" alt="The Paradox Team" className="absolute inset-0 h-full w-full object-cover" />
           </div>
         </div>
         <div className="lg:col-span-7">
@@ -109,17 +101,19 @@ const About = () => {
           <div className="lg:col-span-5">
             <div className="grid grid-cols-2 gap-4">
               {[
-                { k: "Offer", c: "bg-brand-blue text-background" },
-                { k: "Funnel", c: "bg-brand-yellow" },
-                { k: "Creative", c: "bg-brand-orange text-background" },
-                { k: "Spend", c: "bg-foreground text-background" },
+                { k: "Offer", img: "/offer.png" },
+                { k: "Funnel", img: "/funnel.jpg" },
+                { k: "Creative", img: "/creative.png" },
+                { k: "Spend", img: "/spend.png" },
               ].map((b, i) => (
                 <div
                   key={b.k}
-                  className={`aspect-square rounded-2xl ${b.c} flex items-end p-5 font-display text-2xl font-bold`}
+                  className="aspect-square rounded-2xl flex items-end p-5 font-display text-2xl font-bold relative overflow-hidden group bg-black"
                   style={{ transform: `rotate(${(i - 1.5) * 1.4}deg)` }}
                 >
-                  0{i + 1}. {b.k}
+                  <img src={b.img} alt={b.k} className="absolute inset-0 h-full w-full object-cover opacity-80 group-hover:scale-105 group-hover:opacity-100 transition-all duration-500" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent pointer-events-none" />
+                  <span className="relative z-10 text-white drop-shadow-md">0{i + 1}. {b.k}</span>
                 </div>
               ))}
             </div>

@@ -27,7 +27,7 @@ const reviews = [
 
 const chats = [
   {
-    name: "Client — Edtech",
+    name: "Edupath",
     msgs: [
       { from: "client", text: "We just hit our 30-day target." },
       { from: "us", text: "🔥 In 5 days. Let's push harder." },
@@ -35,7 +35,7 @@ const chats = [
     ],
   },
   {
-    name: "Client — Real Estate",
+    name: "Suriya Freelance Editor",
     msgs: [
       { from: "client", text: "37 site visits booked this week." },
       { from: "us", text: "ROAS at 4.6×. Scaling Bangalore next." },
@@ -106,7 +106,7 @@ const Testimonials = () => {
               <div key={c.name} className="rounded-2xl border border-border bg-background p-6">
                 <div className="flex items-center gap-2 pb-4 border-b border-border">
                   <span className="h-8 w-8 rounded-full bg-brand-green text-background inline-flex items-center justify-center font-display font-bold text-sm">
-                    {c.name.split("—")[1].trim()[0]}
+                    {c.name.charAt(0).toUpperCase()}
                   </span>
                   <span className="font-medium text-sm">{c.name}</span>
                   <span className="ml-auto h-2 w-2 rounded-full bg-brand-green animate-blink" />
